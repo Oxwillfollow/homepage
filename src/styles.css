@@ -30,6 +30,7 @@ main {
 
 .projects-container {
   display: flex;
+  flex-wrap: wrap;
   gap: 2rem;
 }
 .project {
@@ -37,15 +38,30 @@ main {
   flex-direction: column;
   background-color: white;
   color: black;
-  max-width: 400px;
+  width: 400px;
+  height: 400px;
+  box-shadow: 3px 3px 3px black;
+  border-radius: 0.5rem;
+
+  .project-screenshot {
+    max-height: 250px;
+    object-fit: cover;
+    border-radius: 0.5rem 0.5rem 0 0;
+  }
 
   .project-info {
     padding: 1rem;
 
+    h2 {
+      margin: 0;
+    }
+
     .project-header {
       display: flex;
       align-items: center;
+      justify-content: space-between;
       gap: 1rem;
+      margin-bottom: 1.5rem;
     }
   }
 }
