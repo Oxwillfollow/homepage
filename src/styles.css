@@ -1,1 +1,57 @@
 @import "../node_modules/modern-normalize/modern-normalize.css";
+
+body {
+  background-color: rgb(29, 29, 29);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  padding: 2rem;
+}
+
+.about-me {
+  background-color: rgb(235, 235, 235);
+  padding: 1rem;
+}
+
+.about-me-img {
+  box-shadow: 3px 3px 3px rgb(126, 126, 126);
+  z-index: 1;
+}
+
+main {
+  color: white;
+  padding: 2rem;
+}
+
+.projects-container {
+  display: flex;
+  gap: 2rem;
+}
+.project {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  color: black;
+  max-width: 400px;
+
+  .project-info {
+    padding: 1rem;
+
+    .project-header {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+  }
+}
+
+footer {
+  margin-top: auto;
+  background-color: rgb(235, 235, 235);
+  padding: 2rem;
+}
