@@ -1,6 +1,7 @@
 import "./styles.css";
 import imgProfilePic from "./images/profile-pic.png";
 import imgGithubIcon from "./images/github.png";
+import imgCallMe from "./images/call-me.png";
 import imgBattleship from "./images/screenshots/screenshot-battleship.jpg";
 import imgTodoList from "./images/screenshots/screenshot-todolist.jpg";
 import imgWeatherApp from "./images/screenshots/screenshot-weatherapp.png";
@@ -22,19 +23,22 @@ const screenshots = {
 };
 
 document.addEventListener("DOMContentLoaded", () => {
-  let myProfileImg = document.querySelector(".about-me-img");
-  let myGithubIcons = document.querySelectorAll(".github-icon");
-  let myProjectScreenshots = document.querySelectorAll(".project-screenshot");
+  let profileImg = document.querySelector(".img-about-me");
+  let contactsImg = document.querySelector(".img-contacts");
+  let githubIcons = document.querySelectorAll(".github-icon");
+  let projectScreenshots = document.querySelectorAll(".project-screenshot");
 
-  myProfileImg.src = imgProfilePic;
+  profileImg.src = imgProfilePic;
+  contactsImg.src = imgCallMe;
+  contactsImg.style.width = "250px";
 
-  myGithubIcons.forEach((icon) => {
+  githubIcons.forEach((icon) => {
     icon.src = imgGithubIcon;
     icon.style.width = "32px";
     icon.style.height = "32px";
   });
 
-  myProjectScreenshots.forEach((screenshot) => {
+  projectScreenshots.forEach((screenshot) => {
     screenshot.src = screenshots[screenshot.id];
   });
 });

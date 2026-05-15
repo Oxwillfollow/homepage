@@ -7,54 +7,87 @@ body {
   flex-direction: column;
 }
 
+h2 {
+  margin: 0;
+}
+
+h1 {
+  margin-bottom: 3rem;
+  margin-top: 0;
+}
+
 header {
   display: flex;
   align-items: center;
-  padding: 2rem;
+  padding: 4rem 4rem 0 4rem;
 }
 
 .about-me {
   background-color: rgb(235, 235, 235);
-  padding: 1rem;
+  padding: 1rem 2rem;
+
+  p {
+    max-width: 60%;
+  }
 }
 
-.about-me-img {
-  box-shadow: 3px 3px 3px rgb(126, 126, 126);
+.img-about-me {
+  width: 300px;
+  box-shadow: 3px 3px 3px rgb(0, 0, 0);
   z-index: 1;
 }
 
 main {
   color: white;
-  padding: 2rem;
+  padding: 4rem;
 }
 
 .projects-container {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
   flex-wrap: wrap;
   gap: 2rem;
 }
+
+@media (max-width: 1200px) {
+  .projects-container {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+@media (max-width: 900px) {
+  .projects-container {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .projects-container {
+    grid-template-columns: 1fr;
+  }
+}
+
 .project {
   display: flex;
   flex-direction: column;
   background-color: white;
   color: black;
-  width: 400px;
-  height: 400px;
+  height: 480px;
   box-shadow: 3px 3px 3px black;
   border-radius: 0.5rem;
+  transition: transform 0.2s;
+  transform-origin: bottom;
+  overflow: hidden;
 
   .project-screenshot {
-    max-height: 250px;
+    height: 320px;
     object-fit: cover;
-    border-radius: 0.5rem 0.5rem 0 0;
+    opacity: 0.8;
+    transition: opacity 0.2s;
   }
 
   .project-info {
     padding: 1rem;
-
-    h2 {
-      margin: 0;
-    }
 
     .project-header {
       display: flex;
@@ -66,8 +99,19 @@ main {
   }
 }
 
+.project:hover {
+  transform: scale(1.05);
+
+  .project-screenshot {
+    opacity: 1;
+  }
+}
+
 footer {
   margin-top: auto;
   background-color: rgb(235, 235, 235);
-  padding: 2rem;
+  padding: 4rem;
+  display: flex;
+  gap: 4rem;
+  align-items: center;
 }
