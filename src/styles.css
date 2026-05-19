@@ -1,23 +1,5 @@
 @import "../node_modules/modern-normalize/modern-normalize.css";
 
-@media (max-width: 1200px) {
-  .projects-container {
-    grid-template-columns: 1fr 1fr 1fr;
-  }
-}
-
-@media (max-width: 900px) {
-  .projects-container {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-
-@media (max-width: 600px) {
-  .projects-container {
-    grid-template-columns: 1fr;
-  }
-}
-
 body {
   background-color: rgb(29, 29, 29);
   min-height: 100vh;
@@ -27,11 +9,6 @@ body {
 
 h2 {
   margin: 0;
-}
-
-h1 {
-  margin-bottom: 3rem;
-  margin-top: 0;
 }
 
 header {
@@ -47,17 +24,26 @@ header {
   p {
     max-width: 1000px;
   }
+
+  .sm-icons {
+    display: flex;
+    justify-content: flex-end;
+  }
 }
 
 .img-about-me {
-  width: 300px;
-  box-shadow: 3px 3px 3px rgb(0, 0, 0);
+  max-width: 300px;
   z-index: 1;
 }
 
 main {
   color: white;
   padding: 4rem;
+
+  h1 {
+    margin-bottom: 3rem;
+    margin-top: 0;
+  }
 }
 
 .projects-container {
@@ -117,4 +103,47 @@ footer {
   display: flex;
   gap: 4rem;
   align-items: center;
+}
+
+@media (max-width: 1200px) {
+  .projects-container {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+@media (max-width: 900px) {
+  .projects-container {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  header {
+    display: block;
+  }
+
+  .img-about-me {
+    float: left;
+    position: relative;
+    left: -2rem;
+    top: -2rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .projects-container {
+    grid-template-columns: 1fr;
+  }
+
+  header {
+    display: flex;
+    flex-direction: column;
+  }
+
+  footer {
+    flex-direction: column;
+  }
+
+  .img-about-me {
+    float: none;
+    position: static;
+  }
 }
