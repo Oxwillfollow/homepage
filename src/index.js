@@ -1,6 +1,7 @@
 import "./styles.css";
 import imgProfilePic from "./images/profile-pic.png";
 import imgGithubIcon from "./images/github.png";
+import imgPreviewIcon from "./images/preview.png";
 import imgCallMe from "./images/call-me.png";
 import imgBattleship from "./images/screenshots/screenshot-battleship.jpg";
 import imgTodoList from "./images/screenshots/screenshot-todolist.jpg";
@@ -26,6 +27,7 @@ document.addEventListener("DOMContentLoaded", () => {
   let profileImg = document.querySelector(".img-about-me");
   let contactsImg = document.querySelector(".img-contacts");
   let githubIcons = document.querySelectorAll(".github-icon");
+  let previewIcons = document.querySelectorAll(".preview-icon");
   let projectScreenshots = document.querySelectorAll(".project-screenshot");
 
   profileImg.src = imgProfilePic;
@@ -34,6 +36,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
   githubIcons.forEach((icon) => {
     icon.src = imgGithubIcon;
+    icon.style.width = "32px";
+    icon.style.height = "32px";
+  });
+
+  previewIcons.forEach((icon) => {
+    icon.src = imgPreviewIcon;
     icon.style.width = "32px";
     icon.style.height = "32px";
   });
